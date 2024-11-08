@@ -15,15 +15,3 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: Maven@4
-  inputs:
-    azureSubscription: 'Azure subscription 1(4cb0cb8f-0efc-459a-a7c4-e5396c908ef8)'
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
